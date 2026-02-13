@@ -1,2 +1,0 @@
-# blog
-king^s blog
