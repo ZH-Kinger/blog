@@ -3,7 +3,8 @@ home: true
 layout: Blog
 icon: house
 title: ZH-Kinger
-heroImage: https://theme-hope-assets.vuejs.press/logo.svg
+# heroImage: https://theme-hope-assets.vuejs.press/logo.svg
+heroImage: /assets/images/logo.png
 bgImage: /assets/images/cover4.jpg
 heroText: 王梓涵
 heroFullScreen: true
