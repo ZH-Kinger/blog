@@ -1,9 +1,10 @@
 ---
+title: web开发
 cover: /assets/images/cover2.jpg
 icon: pen-to-square
 date: 2025-10-12
 category:
-  - web
+  - 开发
 tag:
   - 红
   - 圆

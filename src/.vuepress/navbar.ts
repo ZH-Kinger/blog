@@ -40,8 +40,8 @@ export default navbar([
       },
       { text: "樱桃", icon: "pen-to-square", link: "cherry" },
       { text: "火龙果", icon: "pen-to-square", link: "dragonfruit" },
-      "tomato",
-      "strawberry",
+      "服务器资源预警平台",
+      "web开发教程",
     ],
   },
   {
