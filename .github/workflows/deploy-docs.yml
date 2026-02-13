@@ -45,6 +45,6 @@ jobs:
           # 修正点 2：如果你没有手动去设置 ACCESS_TOKEN，请直接改用下面的默认变量
           token: ${{ secrets.GITHUB_TOKEN }}
           # 修正点 3：部署目标分支建议改为 gh-pages，除非你非要推送到 blog 分支
-          branch: gh-pages
+          branch: blog
           # 修正点 4：同样，路径改为正斜杠
           folder: src/.vuepress/dist
