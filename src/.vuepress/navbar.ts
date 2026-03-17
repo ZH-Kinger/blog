@@ -2,20 +2,19 @@ import { navbar } from "vuepress-theme-hope";
 
 export default navbar([
   "/",
-  "/demo/",
   {
     text: "博文",
     icon: "pen-to-square",
     prefix: "/posts/",
     children: [
       {
-        text: "苹果",
+        text: "容器化与云原生 (Cloud Native)",
         icon: "pen-to-square",
-        prefix: "apple/",
+        prefix: "Cloud_Native/",
         children: [
-          { text: "苹果1", icon: "pen-to-square", link: "1" },
+          { text: "K8s", icon: "pen-to-square", link: "1" },
           { text: "苹果2", icon: "pen-to-square", link: "2" },
-          "3",
+          "K8s",
           "4",
         ],
       },
@@ -45,8 +44,8 @@ export default navbar([
     ],
   },
   {
-    text: "V2 文档",
+    text: "CSDN",
     icon: "book",
-    link: "https://theme-hope.vuejs.press/zh/",
+    link: "https://blog.csdn.net/2301_79801717?spm=1011.2415.3001.5343",
   },
 ]);
