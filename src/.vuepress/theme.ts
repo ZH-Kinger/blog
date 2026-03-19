@@ -29,7 +29,7 @@ export default hopeTheme({
 
   // 博客相关
   blog: {
-    description: "一个前端开发者",
+    description: "AIOPS + AI INFRA",
     intro: "/intro.html",
     medias: {
       Baidu: "https://example.com",
