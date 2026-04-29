@@ -16,7 +16,15 @@
       "Bash(npm run *)",
       "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:8080)",
       "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:8081)",
-      "Bash(curl -s http://localhost:8081/blog/)"
+      "Bash(curl -s http://localhost:8081/blog/)",
+      "Bash(grep -v \"^[0-9]*:.*\\\\`\\\\`\\\\`\")",
+      "Bash(grep -v \"^\\\\s*//\")",
+      "Bash(\" | head -30)",
+      "Bash(grep -v \"```\" | head -30)",
+      "Bash(node -e ' *)",
+      "Bash(python3 -c \"import sys; line = sys.stdin.read\\(\\); print\\(repr\\(line[:200]\\)\\)\")",
+      "Bash(node -e \"const fs=require\\('fs'\\); const lines=fs.readFileSync\\('src/posts/Development/python基础.md','utf8'\\).split\\('\\\\n'\\); const l=lines[268]; console.log\\(JSON.stringify\\(l.substring\\(0,300\\)\\)\\);\")",
+      "Bash(grep -v \"vuepress-vite\\\\|king-blog\\\\|Initializing\\\\|Compiling\\\\|✔\\\\|✗\\\\|^\\\\s*$\")"
     ]
   }
 }

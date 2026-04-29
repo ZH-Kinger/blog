@@ -724,7 +724,7 @@ docker images
 </td><td width="250">
 初始化脚本执行失败
 </td><td width="250">
-查看日志：kubectl logs <pod> -n kube-system -c install-cni
+查看日志：kubectl logs <code>&lt;pod&gt;</code> -n kube-system -c install-cni
 </td></tr><tr style="height: 33px"><td width="250">
 **Init:Error (flexvol)**
 </td><td width="250">
@@ -782,7 +782,7 @@ kubectl get deploy
 </td><td width="250">
 查看控制器（副本数/可用数）
 </td><td width="250">
--n <namespace>
+-n <code>&lt;namespace&gt;</code>
 </td></tr><tr style="height: 33px"><td width="250">
 kubectl get events
 </td><td width="250">
@@ -798,13 +798,13 @@ kubectl get events
 </td><td width="250">
 **场景技巧**
 </td></tr><tr style="height: 33px"><td width="250">
-kubectl describe po <name>
+kubectl describe po <code>&lt;name&gt;</code>
 </td><td width="250">
 查看资源详情和**系统事件**
 </td><td width="250">
 镜像拉不动、调度失败时必看
 </td></tr><tr style="height: 33px"><td width="250">
-kubectl logs <name>
+kubectl logs <code>&lt;name&gt;</code>
 </td><td width="250">
 查看容器输出的**程序日志**
 </td><td width="250">
@@ -814,13 +814,13 @@ kubectl logs <name>
 
 (末尾 100 行)
 </td></tr><tr style="height: 33px"><td width="250">
-kubectl exec -it <name> -- sh
+kubectl exec -it <code>&lt;name&gt;</code> -- sh
 </td><td width="250">
 **进入容器**内部交互
 </td><td width="250">
 测试网络连通性或查看内部配置
 </td></tr><tr style="height: 33px"><td width="250">
-kubectl logs <name> -c <container>
+kubectl logs <code>&lt;name&gt;</code> -c <code>&lt;container&gt;</code>
 </td><td width="250">
 查看多容器 Pod 中的指定容器日志
 </td><td width="250">
@@ -840,13 +840,13 @@ kubectl top pod/node
 </td><td width="250">
 **场景技巧**
 </td></tr><tr style="height: 33px"><td width="303">
-kubectl apply -f <file>.yaml
+kubectl apply -f <code>&lt;file&gt;</code>.yaml
 </td><td width="250">
 **创建或更新**资源
 </td><td width="250">
 声明式运维的核心命令
 </td></tr><tr style="height: 33px"><td width="303">
-kubectl delete pod <name>
+kubectl delete pod <code>&lt;name&gt;</code>
 </td><td width="250">
 删除 Pod
 </td><td width="250">
@@ -854,19 +854,19 @@ kubectl delete pod <name>
 
 (强制删除)
 </td></tr><tr style="height: 33px"><td width="303">
-kubectl scale deploy <name> --replicas=5
+kubectl scale deploy <code>&lt;name&gt;</code> --replicas=5
 </td><td width="250">
 动态调整副本数量
 </td><td width="250">
 应对突发流量
 </td></tr><tr style="height: 33px"><td width="303">
-kubectl rollout restart deploy <name>
+kubectl rollout restart deploy <code>&lt;name&gt;</code>
 </td><td width="250">
 **平滑重启**所有 Pod
 </td><td width="250">
 修改配置后让 Pod 重新加载镜像
 </td></tr><tr style="height: 33px"><td width="303">
-kubectl rollout undo deploy <name>
+kubectl rollout undo deploy <code>&lt;name&gt;</code>
 </td><td width="250">
 **版本回滚**
 </td><td width="250">
@@ -878,15 +878,15 @@ kubectl rollout undo deploy <name>
 </td><td width="375">
 **功能描述**
 </td></tr><tr style="height: 33px"><td width="375">
-kubectl run <name> --image=<img-name> --dry-run=client -o yaml > pod.yaml
+kubectl run <code>&lt;name&gt;</code> --image=<code>&lt;img-name&gt;</code> --dry-run=client -o yaml > pod.yaml
 </td><td width="375">
 快速生成 Pod 的 YAML 模版
 </td></tr><tr style="height: 33px"><td width="375">
-kubectl create deploy <name> --image=... --dry-run=client -o yaml > deploy.yaml
+kubectl create deploy <code>&lt;name&gt;</code> --image=... --dry-run=client -o yaml > deploy.yaml
 </td><td width="375">
 快速生成 Deployment 模版
 </td></tr><tr style="height: 33px"><td width="375">
-kubectl expose deploy <name> --port=80 --type=NodePort --dry-run=client -o yaml > svc.yaml
+kubectl expose deploy <code>&lt;name&gt;</code> --port=80 --type=NodePort --dry-run=client -o yaml > svc.yaml
 </td><td width="375">
 快速生成 Service 模版
 </td></tr></tbody></table>
@@ -1072,7 +1072,7 @@ kubectl run my-web --image=nginx:alpine --dry-run=client -o yaml > web-template.
 <hr id="uas1m" class="ne-hr">
 ### 3. Pod 的四大状况 (Conditions)
 
-如果你执行 kubectl describe pod <name>，在输出的底部会看到 Conditions 列表，这是更底层的健康指标：
+如果你执行 kubectl describe pod <code>&lt;name&gt;</code>，在输出的底部会看到 Conditions 列表，这是更底层的健康指标：
 
 
 - **PodScheduled**: Pod 是否已经成功调度到某个 Node 上。

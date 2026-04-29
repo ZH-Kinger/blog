@@ -12,8 +12,6 @@ category:
 
 单个 LLM 只能完成简单的问答，但如果你想实现“**先搜索知识库 -> 再提取信息 -> 结合历史记忆 -> 最后生成回答**”这样复杂的逻辑，你就必须把多个组件像锁链一样扣在一起。
 
-![image-20260325121443267](C:\Users\asus\AppData\Roaming\Typora\typora-user-images\image-20260325121443267.png)
-
 ------
 
 ## 1. Chain 的核心本质：管道（Pipeline）

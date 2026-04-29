@@ -68,7 +68,7 @@ print("x>y")
 
 else
 
-print("x<=y")
+print("x&lt;=y")
 
 ## 4.一行可以有多个语句但是不建议
 
@@ -266,7 +266,25 @@ print(i)
 
 print('ab'in "python")
 
-#从键盘接收任意字符串输入，按顺序拿取出里面的大写字母，小写字母，数字#判断是否为回文u=l=d=''s = input("请输入字符串")for i in s:    if 'A' <= i <= 'Z':        u += i    elif 'a' <= i <= 'z':        l += i    else:        d += iprint(u, l, d, sep='\n')print("\n回文判断结果：")print(f"大写字母序列是否回文：{u == u[::-1]}")print(f"小写字母序列是否回文：{l == l[::-1]}")print(f"数字序列是否回文：{d == d[::-1]}")print(f"原始字符串是否回文：{s == s[::-1]}")
+```python
+# 从键盘接收任意字符串输入，按顺序拿取出里面的大写字母、小写字母、数字
+# 判断是否为回文
+u = l = d = ''
+s = input("请输入字符串")
+for i in s:
+    if 'A' <= i <= 'Z':
+        u += i
+    elif 'a' <= i <= 'z':
+        l += i
+    else:
+        d += i
+print(u, l, d, sep='\n')
+print("\n回文判断结果：")
+print(f"大写字母序列是否回文：{u == u[::-1]}")
+print(f"小写字母序列是否回文：{l == l[::-1]}")
+print(f"数字序列是否回文：{d == d[::-1]}")
+print(f"原始字符串是否回文：{s == s[::-1]}")
+```
 
 ## 9.算术运算符
 
@@ -282,7 +300,7 @@ print(5 % 2 , 2 **3)
 
 #比较运算符
 
-#>  <  >=  <=  !=  ==
+#>  &lt;  >=  &lt;=  !=  ==
 
 #	10<x15
 
@@ -376,7 +394,7 @@ lst.extend("xyz")   #把另外一个可迭代对象的元素添加进来  可迭
 
 #有一条船 船上有30个人#给每一个人一个编号1，2，3...30#船超载    只能容纳20个人 有10个人要下船，数到8，就下船，最后打印输入哪些人下船
 
-ship = list(range(1,31))out = []current = 0while len(out) < 10:    current = (current+7)%len(ship)    man = ship.pop(current)    out.append(man)
+ship = list(range(1,31))out = []current = 0while len(out) &lt; 10:    current = (current+7)%len(ship)    man = ship.pop(current)    out.append(man)
 
 print(out)
 

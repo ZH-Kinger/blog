@@ -149,7 +149,8 @@ ansible-playbook deploy_web.yml --limit @deploy_web.retry（只对上次失败�
 
 - **问：如何查看远程机器的全部变量？**
 
-答：执行 ansible <host> -m debug -a "var=hostvars[inventory_hostname]"。
+答：执行 ansible <code>&lt;host&gt;</code> -m debug -a "var=hostvars[inventory_hostname]"。
+
 
 
 - **问：Ansible 为什么是幂等的？**
