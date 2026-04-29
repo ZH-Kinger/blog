@@ -1,0 +1,22 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(file /e/study_space/yuque/*.lakebook)",
+      "Read(//tmp/**)",
+      "Read(//tmp/yuque_extract/**)",
+      "Bash(python3)",
+      "Bash(mkdir -p /tmp/docker_lake)",
+      "Bash(tar xf *)",
+      "Bash(python3 -c ' *)",
+      "Bash(wsl python3 *)",
+      "Bash(node scripts/convert-docs.js)",
+      "Bash(node scripts/convert-docs.cjs)",
+      "Bash(pwd -W)",
+      "Bash(echo \"Bash /tmp = $\\(cd /tmp && pwd -W\\)\")",
+      "Bash(npm run *)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:8080)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:8081)",
+      "Bash(curl -s http://localhost:8081/blog/)"
+    ]
+  }
+}

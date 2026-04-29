@@ -1,0 +1,99 @@
+---
+title: nmap命令
+icon: network-wired
+date: 2026-02-24
+category:
+  - 计算机网络
+---
+
+如果说 nc 是网络界的“瑞士军刀”，那么 **nmap**** (Network Mapper)** 就是“核动力扫描仪”。它是网络管理员和安全审计员最常用的工具，用于列举网络主机、发现服务、检测操作系统版本以及漏洞扫描。
+<hr id="V4Dti" class="ne-hr">
+### 1. nmap 的核心工作原理
+
+nmap 通过发送经过精心设计的原始 IP 数据包（如 TCP SYN, UDP, ICMP 等），并分析目标的响应来判断端口状态。
+<hr id="yWS5r" class="ne-hr">
+### 2. 常用命令参数速查表
+
+根据你的需求，nmap 的用法可以从简单到复杂分为四个级别：
+<table id="ugkkF" class="ne-table" style="width: 750px"><tbody><tr style="height: 33px"><td width="250">
+**级别**
+</td><td width="250">
+**命令示例**
+</td><td width="250">
+**功能描述**
+</td></tr><tr style="height: 33px"><td width="250">
+**快速扫描**
+</td><td width="250">
+nmap 192.168.1.1
+</td><td width="250">
+扫描最常用的 1000 个 TCP 端口。
+</td></tr><tr style="height: 33px"><td width="250">
+**指定端口**
+</td><td width="250">
+nmap -p 80,443 192.168.1.1
+</td><td width="250">
+仅扫描 80 和 443 端口。
+</td></tr><tr style="height: 33px"><td width="250">
+**服务/版本探测**
+</td><td width="250">
+nmap -sV 192.168.1.1
+</td><td width="250">
+**最常用**。探测端口运行的具体服务及版本号。
+</td></tr><tr style="height: 33px"><td width="250">
+**操作系统识别**
+</td><td width="250">
+nmap -O 192.168.1.1
+</td><td width="250">
+通过指纹分析判断目标是 Linux, Windows 还是嵌入式设备。
+</td></tr><tr style="height: 33px"><td width="250">
+**全面扫描**
+</td><td width="250">
+nmap -A 192.168.1.1
+</td><td width="250">
+强力模式：包含版本探测、OS识别、脚本扫描和路由追踪。
+</td></tr><tr style="height: 33px"><td width="250">
+**网段存活扫描**
+</td><td width="250">
+nmap -sn 192.168.1.0/24
+</td><td width="250">
+“Ping 扫描”，只查看哪些机器开机，不扫描端口。
+</td></tr></tbody></table><hr id="C3kRs" class="ne-hr">
+### 3. 理解扫描结果的“六种状态”
+
+nmap 返回的不仅仅是“开”或“关”，它有更细致的定义：
+
+
+- **open**：应用程序正在此端口监听连接。
+- **closed**：端口接收到了包，但没有程序在监听。
+- **filtered**：**最常见于防火墙环境**。nmap 无法确定端口是否开放，因为数据包被过滤掉（无回应）。
+- **unfiltered**：端口可访问，但 nmap 无法确定其开关状态（通常出现在 ACK 扫描中）。
+- **open|filtered**：无法确定是开放还是被过滤。
+- **closed|filtered**：无法确定是关闭还是被过滤。
+<hr id="Xt0PG" class="ne-hr">
+### 4. 高级进阶：NSE 脚本引擎
+
+nmap 真正恐怖的地方在于它的脚本引擎 (**NSE**)。你可以通过 --script 参数调用数以百计的现成脚本进行漏洞探测。
+
+
+- **漏洞扫描：**nmap --script vuln 192.168.1.1 (自动检查目标是否存在常见 CVE 漏洞)
+- **暴力破解：**nmap --script ssh-brute 192.168.1.1 (尝试破解 SSH 密码)
+<hr id="afP1f" class="ne-hr">
+### 5. 一个实用的“全能型”命令建议
+
+如果你在排查一台服务器的详细信息，建议使用这条组合命令：
+
+```
+nmap -sS -sV -T4 -A -v 192.168.1.1
+```
+
+
+- -sS：半开放扫描（SYN），隐蔽且快。
+- -sV：查版本。
+- -T4：设置速度等级（1-5，4 比较平衡）。
+- -v：显示实时扫描进度。
+<hr id="Ie4cl" class="ne-hr">
+### ⚠️ 安全提醒
+
+
+- **法律风险**：未经授权扫描他人服务器在很多国家是非法的。
+- **隐蔽性**：普通扫描很容易被 IDS（入侵检测系统）或防火墙拦截。如果你需要更隐蔽的扫描，可能需要研究 -f (分片) 或 --spoof (伪造 IP) 参数。
