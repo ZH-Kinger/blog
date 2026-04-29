@@ -8,14 +8,11 @@ export default navbar([
     prefix: "/posts/",
     children: [
       {
-        text: "容器化与云原生 (Cloud Native)",
-        icon: "pen-to-square",
+        text: "云原生",
+        icon: "cloud",
         prefix: "Cloud_Native/",
         children: [
-          { text: "K8s", icon: "pen-to-square", link: "1" },
-          { text: "苹果2", icon: "pen-to-square", link: "2" },
-          "K8s",
-          "4",
+          { text: "Kubernetes", icon: "dharmachakra", link: "K8s" },
         ],
       },
       {
@@ -23,24 +20,14 @@ export default navbar([
         icon: "pen-to-square",
         prefix: "banana/",
         children: [
-          {
-            text: "香蕉 1",
-            icon: "pen-to-square",
-            link: "1",
-          },
-          {
-            text: "香蕉 2",
-            icon: "pen-to-square",
-            link: "2",
-          },
-          "3",
-          "4",
+          { text: "香蕉 1", icon: "pen-to-square", link: "1" },
+          { text: "香蕉 2", icon: "pen-to-square", link: "2" },
+          { text: "香蕉 3", icon: "pen-to-square", link: "3" },
+          { text: "香蕉 4", icon: "pen-to-square", link: "4" },
         ],
       },
-      { text: "樱桃", icon: "pen-to-square", link: "cherry" },
-      { text: "火龙果", icon: "pen-to-square", link: "dragonfruit" },
-      "服务器资源预警平台",
-      "web开发教程",
+      { text: "服务器资源预警平台", icon: "server", link: "服务器资源预警平台" },
+      { text: "Web 开发教程", icon: "code", link: "web开发教程" },
     ],
   },
   {
