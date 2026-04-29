@@ -251,7 +251,9 @@ docker run -d \
 
 
 - 在 **Import via grafana.com** 框中输入 ID：1860，然后点击 **Load**。
-- ![](https://cdn.nlark.com/yuque/0/2026/png/62301513/1772628310142-2ddb65de-4ecb-4cc4-8771-843fd62838b3.png)
+
+![](https://cdn.nlark.com/yuque/0/2026/png/62301513/1772628310142-2ddb65de-4ecb-4cc4-8771-843fd62838b3.png)
+
 - 点击 **load**。
 
 ### 最终效果
