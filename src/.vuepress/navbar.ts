@@ -47,6 +47,18 @@ export default navbar([
         ],
       },
       {
+        text: "AI 基础设施",
+        icon: "microchip",
+        prefix: "AI_Infra/",
+        children: [
+          { text: "训练架构与故障排查", icon: "server", link: "训练架构/" },
+          { text: "大模型技术", icon: "brain", link: "大模型技术/" },
+          { text: "深度学习基础", icon: "network-wired", link: "深度学习基础/" },
+          { text: "AI Infra 底层", icon: "microchip", link: "AI-infra/" },
+          { text: "运动学与机械基础", icon: "robot", link: "运动学与机械基础/" },
+        ],
+      },
+      {
         text: "开发",
         icon: "code",
         prefix: "Development/",

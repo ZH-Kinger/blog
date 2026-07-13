@@ -1,1 +1,70 @@
-// you can change colors here
+// ===== Palette overrides =====
+// 覆盖 theme-hope 的调色板 SCSS 变量(会被生成器转成 CSS 自定义属性 --vp-c-*、--vp-font 等)。
+// 加载顺序:默认调色板 -> 本文件 -> generator,因此这里的赋值优先于默认值,
+// 且 generator 中派生变量(text-mute / border-hard / bg-soft ...)会基于这里的取值。
+// 亮 / 暗色分别对应 :root 与 [data-theme='dark']。
+
+// ---------- 背景:浅暖白页面 + 纯白卡片(暗色:深灰底 + 稍亮卡片)----------
+$vp-c-bg: (
+  light: #f7f8fa,
+  dark: #1a1a1a,
+);
+$vp-c-bg-alt: (
+  light: #f0f1f4,
+  dark: #161616,
+);
+// 卡片 / 导航栏等"抬升"表面
+$vp-c-bg-elv: (
+  light: #ffffff,
+  dark: #242424,
+);
+
+// ---------- 文字:深灰而非纯黑 ----------
+$vp-c-text: (
+  light: #2b2b2b,
+  dark: rgb(235 235 245 / 88%),
+);
+
+// ---------- 边框 / 分隔线:去硬边,极淡 ----------
+$vp-c-border: (
+  light: #ececee,
+  dark: #2e2e30,
+);
+$vp-c-divider: (
+  light: #f0f0f2,
+  dark: #262628,
+);
+
+// ---------- 阴影:柔和 ----------
+$vp-c-shadow: (
+  light: rgb(0 0 0 / 6%),
+  dark: rgb(0 0 0 / 34%),
+);
+
+// ---------- 强调色:鲜明的小红书珊瑚红(链接 / 激活态 / 标题下划线)----------
+// 直接覆盖 generator 的派生值,避免其把主色压暗成砖红,保留 RED 的通透感。
+$vp-c-accent: (
+  light: #eb3b54,
+  dark: #ff5c6b,
+);
+$vp-c-accent-bg: (
+  light: #f5455c,
+  dark: #ff4d5f,
+);
+$vp-c-accent-hover: (
+  light: #d92f47,
+  dark: #ff7480,
+);
+$vp-c-accent-soft: (
+  light: rgb(245 69 92 / 12%),
+  dark: rgb(255 92 107 / 16%),
+);
+
+// ---------- 字体:中文友好字体栈 + 正文行高 ----------
+$vp-font: '-apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", "Noto Sans SC", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif';
+$vp-font-heading: $vp-font;
+$vp-font-mono: '"JetBrains Mono", ui-monospace, "SFMono-Regular", "Menlo", "Consolas", "Liberation Mono", monospace';
+
+// ---------- 过渡:平滑一致 ----------
+$vp-t-color: "0.25s ease";
+$vp-t-transform: "0.25s ease";

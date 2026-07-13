@@ -25,6 +25,13 @@ export default sidebar({
       children: "structure",
     },
     {
+      text: "AI 基础设施",
+      icon: "microchip",
+      prefix: "posts/AI_Infra/",
+      collapsible: true,
+      children: "structure",
+    },
+    {
       text: "开发",
       icon: "code",
       prefix: "posts/Development/",

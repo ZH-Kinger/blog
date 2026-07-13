@@ -3,3 +3,9 @@ node_modules/
 src/.vuepress/.cache/
 src/.vuepress/.temp/
 src/.vuepress/dist/
+
+# RAG agent 子项目与其协作文档:不进博客 git(独立于博客,只把博客当语料读)
+/rag-server/
+/docs/
+# RAG 语料(agent 用,非博客内容)
+/*.pdf

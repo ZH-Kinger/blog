@@ -1,1 +1,137 @@
-// place your custom styles here
+// ===== Custom global styles =====
+// 小红书(RED)浅色卡片风:干净留白 + 圆角 + 柔和阴影 + 克制配色。
+// 仅使用 theme-hope 真实存在的 class(.vp-article-*、.vp-card、[vp-content] 等)
+// 与 CSS 变量(--vp-c-*、--vp-font、--vp-t-* 等)。
+
+:root {
+  // 统一圆角体系
+  --rn-radius-card: 15px;
+  --rn-radius-media: 12px;
+  --rn-radius-control: 10px;
+
+  // 柔和阴影(卡片默认 / hover 加深)
+  --rn-shadow: 0 2px 12px rgb(0 0 0 / 6%);
+  --rn-shadow-hover: 0 8px 24px rgb(0 0 0 / 10%);
+
+  // 代码块跟随统一圆角(默认 6px)
+  --code-border-radius: var(--rn-radius-media);
+  --tab-border-radius: var(--rn-radius-media);
+}
+
+[data-theme="dark"] {
+  --rn-shadow: 0 2px 12px rgb(0 0 0 / 30%);
+  --rn-shadow-hover: 0 8px 24px rgb(0 0 0 / 42%);
+}
+
+// ---------- 正文排版:更通透的行高与字重 ----------
+[vp-content] {
+  font-family: var(--vp-font);
+
+  #markdown-content {
+    line-height: 1.75;
+
+    p,
+    li {
+      line-height: 1.75;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+      font-family: var(--vp-font-heading);
+      font-weight: 700;
+      letter-spacing: 0.01em;
+    }
+  }
+
+  // 图片统一圆角
+  img {
+    border-radius: var(--rn-radius-media);
+  }
+}
+
+// ---------- 博客首页文章卡片 ----------
+.vp-article-item {
+  padding: 1.25rem 1.5rem;
+  border-radius: var(--rn-radius-card);
+
+  background: var(--vp-c-bg-elv);
+  // 用柔和阴影替代硬边框
+  box-shadow: var(--rn-shadow);
+
+  transition:
+    transform var(--vp-t-transform),
+    box-shadow var(--vp-t-transform),
+    background var(--vp-t-color);
+
+  &:hover {
+    box-shadow: var(--rn-shadow-hover);
+    // 轻微上浮
+    transform: translateY(-2px);
+  }
+
+  // 封面图跟随卡片圆角
+  .vp-article-cover {
+    border-top-left-radius: var(--rn-radius-card);
+    border-top-right-radius: var(--rn-radius-card);
+  }
+}
+
+// 加大卡片之间的间距,更通透
+.vp-article-wrapper {
+  margin-bottom: 1.5rem;
+}
+
+// ---------- VPCard(组件卡片 / 链接卡)----------
+.vp-card {
+  padding: 1.25rem;
+  border-radius: var(--rn-radius-card);
+
+  // 纯白卡片 + 柔和阴影,去掉默认灰底
+  background: var(--vp-c-bg-elv);
+  box-shadow: var(--rn-shadow);
+
+  transition:
+    transform var(--vp-t-transform),
+    box-shadow var(--vp-t-transform),
+    background var(--vp-t-color);
+
+  &:hover {
+    background: var(--vp-c-bg-elv);
+    box-shadow: var(--rn-shadow-hover);
+    transform: translateY(-2px);
+  }
+}
+
+// ---------- 代码块:统一圆角 + 柔和阴影 ----------
+div[class*="language-"] {
+  border-radius: var(--code-border-radius);
+  box-shadow: var(--rn-shadow);
+}
+
+// ---------- 输入框 / 按钮统一圆角 ----------
+input,
+textarea,
+select,
+button,
+.vp-blog-type-button {
+  border-radius: var(--rn-radius-control);
+}
+
+// 搜索框圆角(plugin-search / docsearch 通用容器)
+.search-box input,
+.DocSearch-Button {
+  border-radius: var(--rn-radius-control) !important;
+}
+
+// ---------- 导航栏:更干净的分隔 ----------
+.vp-navbar {
+  box-shadow: 0 1px 0 var(--vp-c-divider);
+}
+
+// ---------- 侧栏博主信息卡也套用柔和阴影 ----------
+.vp-blogger-info {
+  border-radius: var(--rn-radius-card);
+  box-shadow: var(--rn-shadow);
+}
