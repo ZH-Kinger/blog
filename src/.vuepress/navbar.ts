@@ -94,6 +94,14 @@ export default navbar([
     ],
   },
   {
+    // AI 助手:跳转到部署在服务器上的 Agentic RAG 对话前端(新标签打开)。
+    // 注:agent 是 http 纯 IP 服务,博客是 https;浏览器"混合内容"策略禁止 iframe 嵌入,
+    // 故用外链新开标签(target=_blank 由 theme-hope 对外链自动处理),不能内嵌。
+    text: "AI 助手",
+    icon: "robot",
+    link: "http://115.191.2.86:7860",
+  },
+  {
     text: "CSDN",
     icon: "book",
     link: "https://blog.csdn.net/2301_79801717?spm=1011.2415.3001.5343",
